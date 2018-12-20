@@ -199,8 +199,27 @@ public class EvaluationService {
 	 * NANP-countries, only 1 is considered a valid country code.
 	 */
 	public String cleanPhoneNumber(String string) {
-		// TODO Write an implementation for this method declaration
-		return null;
+		String phoneNumber = string.replaceAll("\\D", "");
+		if(phoneNumber.length() > 11) {
+			throw new IllegalArgumentException("Please enter valid phone number");
+		}else if (phoneNumber.length() == 11) {
+			if(phoneNumber.charAt(0) == '1') {
+				//remove 1
+			}else {
+				throw new IllegalArgumentException("Please enter valid phone number");
+			}
+		}else {
+			if(phoneNumber.length() == 10) {
+				if(phoneNumber.charAt(0) >= 2) {
+					
+				}else {
+					throw new IllegalArgumentException("Please enter valid phone number");
+				}
+			}else {
+				throw new IllegalArgumentException("Please enter valid phone number");
+			}
+		}
+		return phoneNumber;
 	}
 
 	/**
