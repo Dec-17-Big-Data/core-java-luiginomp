@@ -1,6 +1,7 @@
 package com.revature.eval.java.core;
 
 import java.time.temporal.Temporal;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -30,8 +31,17 @@ public class EvaluationService {
 	 * @return
 	 */
 	public String acronym(String phrase) {
-		// TODO Write an implementation for this method declaration
-		return null;
+		if(phrase.length() == 0 || phrase.isEmpty() || phrase == null) {
+			return null;
+		}
+		
+		String[] words = phrase.split("\\W+");
+		String acronym = "";
+		for (int i = 0; i < words.length; i++) {
+			acronym += words[i].charAt(0);
+		}
+		
+		return acronym.toUpperCase();
 	}
 
 	/**
@@ -84,18 +94,15 @@ public class EvaluationService {
 		}
 
 		public boolean isEquilateral() {
-			// TODO Write an implementation for this method declaration
-			return false;
+			return sideOne == sideTwo && sideTwo == sideThree;
 		}
 
 		public boolean isIsosceles() {
-			// TODO Write an implementation for this method declaration
-			return false;
+			return sideOne == sideTwo || sideOne == sideThree || sideTwo == sideThree;
 		}
 
 		public boolean isScalene() {
-			// TODO Write an implementation for this method declaration
-			return false;
+			return !isIsosceles();
 		}
 
 	}
@@ -116,8 +123,48 @@ public class EvaluationService {
 	 * @return
 	 */
 	public int getScrabbleScore(String string) {
-		// TODO Write an implementation for this method declaration
-		return 0;
+		//Create data structure of characters and their score
+		Map <Character, Integer> scoreMap = new HashMap <Character, Integer>();
+		
+		scoreMap.put('A', 1);
+		scoreMap.put('B', 3);
+		scoreMap.put('C', 3);
+		scoreMap.put('D', 2);
+		scoreMap.put('E', 1);
+		scoreMap.put('F', 4);
+		scoreMap.put('G', 2);
+		scoreMap.put('H', 4);
+		scoreMap.put('I', 1);
+		scoreMap.put('J', 8);
+		scoreMap.put('K', 5);
+		scoreMap.put('L', 1);
+		scoreMap.put('M', 3);
+		scoreMap.put('N', 1);
+		scoreMap.put('O', 1);
+		scoreMap.put('P', 3);
+		scoreMap.put('Q', 10);
+		scoreMap.put('R', 1);
+		scoreMap.put('S', 1);
+		scoreMap.put('T', 1);
+		scoreMap.put('U', 1);
+		scoreMap.put('V', 4);
+		scoreMap.put('W', 4);
+		scoreMap.put('X', 8);
+		scoreMap.put('Y', 4);
+		scoreMap.put('Z', 10);
+		
+		String capitalizedString = string.toUpperCase();
+		
+		//Compare string to data structure and get a sum of their scores
+		int finalScore = 0;
+		for (int i = 0; i < capitalizedString.length(); i++) {
+			if(scoreMap.containsKey(capitalizedString.charAt(i))) {
+				finalScore += scoreMap.get(capitalizedString.charAt(i));
+			}
+		}
+		
+		//Return sum of scores
+		return finalScore;
 	}
 
 	/**
