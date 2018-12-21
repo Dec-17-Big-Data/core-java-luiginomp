@@ -249,56 +249,56 @@ public class EvaluationServiceTest {
 //		assertEquals(expectedWordCount, actualWordCount);
 //	}
 //
-	/*******************************************************************
-	 * Question 7
-	 ******************************************************************/
-	@Test
-	public void findsAValueInTheMiddleOfAnArray() {
-		List<String> sortedList = Collections.unmodifiableList(Arrays.asList("1", "3", "4", "6", "8", "9", "11"));
-
-		EvaluationService.BinarySearch<String> search = new EvaluationService.BinarySearch<>(sortedList);
-
-		assertEquals(3, search.indexOf("6"));
-	}
-
-	@Test
-	public void findsAValueAtTheBeginningOfAnArray() {
-		List<Integer> sortedList = Collections.unmodifiableList(Arrays.asList(1, 3, 4, 6, 8, 9, 11));
-
-		EvaluationService.BinarySearch<Integer> search = new EvaluationService.BinarySearch<>(sortedList);
-
-		assertEquals(0, search.indexOf(1));
-	}
-
-	@Test
-	public void findsAValueAtTheEndOfAnArray() {
-		List<Integer> sortedList = Collections.unmodifiableList(Arrays.asList(1, 3, 4, 6, 8, 9, 11));
-
-		EvaluationService.BinarySearch<Integer> search = new EvaluationService.BinarySearch<>(sortedList);
-
-		assertEquals(6, search.indexOf(11));
-	}
-
-	@Test
-	public void findsAValueInAnArrayOfOddLength() {
-		List<Integer> sortedListOfOddLength = Collections
-				.unmodifiableList(Arrays.asList(1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 634));
-
-		EvaluationService.BinarySearch<Integer> search = new EvaluationService.BinarySearch<>(sortedListOfOddLength);
-
-		assertEquals(9, search.indexOf(144));
-	}
-
-	@Test
-	public void findsAValueInAnArrayOfEvenLength() {
-		List<Integer> sortedListOfEvenLength = Collections
-				.unmodifiableList(Arrays.asList(1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377));
-
-		EvaluationService.BinarySearch<Integer> search = new EvaluationService.BinarySearch<>(sortedListOfEvenLength);
-
-		assertEquals(5, search.indexOf(21));
-	}
-
+//	/*******************************************************************
+//	 * Question 7
+//	 ******************************************************************/
+//	@Test
+//	public void findsAValueInTheMiddleOfAnArray() {
+//		List<String> sortedList = Collections.unmodifiableList(Arrays.asList("1", "3", "4", "6", "8", "9", "11"));
+//
+//		EvaluationService.BinarySearch<String> search = new EvaluationService.BinarySearch<>(sortedList);
+//
+//		assertEquals(3, search.indexOf("6"));
+//	}
+//
+//	@Test
+//	public void findsAValueAtTheBeginningOfAnArray() {
+//		List<Integer> sortedList = Collections.unmodifiableList(Arrays.asList(1, 3, 4, 6, 8, 9, 11));
+//
+//		EvaluationService.BinarySearch<Integer> search = new EvaluationService.BinarySearch<>(sortedList);
+//
+//		assertEquals(0, search.indexOf(1));
+//	}
+//
+//	@Test
+//	public void findsAValueAtTheEndOfAnArray() {
+//		List<Integer> sortedList = Collections.unmodifiableList(Arrays.asList(1, 3, 4, 6, 8, 9, 11));
+//
+//		EvaluationService.BinarySearch<Integer> search = new EvaluationService.BinarySearch<>(sortedList);
+//
+//		assertEquals(6, search.indexOf(11));
+//	}
+//
+//	@Test
+//	public void findsAValueInAnArrayOfOddLength() {
+//		List<Integer> sortedListOfOddLength = Collections
+//				.unmodifiableList(Arrays.asList(1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 634));
+//
+//		EvaluationService.BinarySearch<Integer> search = new EvaluationService.BinarySearch<>(sortedListOfOddLength);
+//
+//		assertEquals(9, search.indexOf(144));
+//	}
+//
+//	@Test
+//	public void findsAValueInAnArrayOfEvenLength() {
+//		List<Integer> sortedListOfEvenLength = Collections
+//				.unmodifiableList(Arrays.asList(1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377));
+//
+//		EvaluationService.BinarySearch<Integer> search = new EvaluationService.BinarySearch<>(sortedListOfEvenLength);
+//
+//		assertEquals(5, search.indexOf(21));
+//	}
+//
 //	/*******************************************************************
 //	 * Question 8
 //	 ******************************************************************/
@@ -327,44 +327,44 @@ public class EvaluationServiceTest {
 //		assertEquals("ickquay astfay unray", evaluationService.toPigLatin("quick fast run"));
 //	}
 //
-//	/*******************************************************************
-//	 * Question 9
-//	 ******************************************************************/
-//	@Test
-//	public void singleDigitsAreArmstrongNumbers() {
-//		int input = 5;
-//
-//		assertTrue(evaluationService.isArmstrongNumber(input));
-//	}
-//
-//	@Test
-//	public void noTwoDigitArmstrongNumbers() {
-//		int input = 10;
-//
-//		assertFalse(evaluationService.isArmstrongNumber(input));
-//	}
-//
-//	@Test
-//	public void threeDigitNumberIsArmstrongNumber() {
-//		int input = 153;
-//
-//		assertTrue(evaluationService.isArmstrongNumber(input));
-//	}
-//
-//	@Test
-//	public void threeDigitNumberIsNotArmstrongNumber() {
-//		int input = 100;
-//
-//		assertFalse(evaluationService.isArmstrongNumber(input));
-//	}
-//
-//	@Test
-//	public void fourDigitNumberIsArmstrongNumber() {
-//		int input = 9474;
-//
-//		assertTrue(evaluationService.isArmstrongNumber(input));
-//	}
-//
+	/*******************************************************************
+	 * Question 9
+	 ******************************************************************/
+	@Test
+	public void singleDigitsAreArmstrongNumbers() {
+		int input = 5;
+
+		assertTrue(evaluationService.isArmstrongNumber(input));
+	}
+
+	@Test
+	public void noTwoDigitArmstrongNumbers() {
+		int input = 10;
+
+		assertFalse(evaluationService.isArmstrongNumber(input));
+	}
+
+	@Test
+	public void threeDigitNumberIsArmstrongNumber() {
+		int input = 153;
+
+		assertTrue(evaluationService.isArmstrongNumber(input));
+	}
+
+	@Test
+	public void threeDigitNumberIsNotArmstrongNumber() {
+		int input = 100;
+
+		assertFalse(evaluationService.isArmstrongNumber(input));
+	}
+
+	@Test
+	public void fourDigitNumberIsArmstrongNumber() {
+		int input = 9474;
+
+		assertTrue(evaluationService.isArmstrongNumber(input));
+	}
+
 //	/*******************************************************************
 //	 * Question 10
 //	 ******************************************************************/

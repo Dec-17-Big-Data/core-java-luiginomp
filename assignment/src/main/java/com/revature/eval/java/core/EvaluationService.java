@@ -340,8 +340,38 @@ public class EvaluationService {
 	 * @return
 	 */
 	public String toPigLatin(String string) {
-		// TODO Write an implementation for this method declaration
-		return null;
+		String pigLatin = "";
+		
+		String[] words = string.split("\\W+");
+		
+		for(int i = 0; i < words.length; i++) {
+			String word = words[i];
+			if(word.startsWith("a") || word.startsWith("e") || word.startsWith("i") || word.startsWith("o") || word.startsWith("u")) {
+				word += "ay";
+			}
+			else if (word.startsWith("qu")) {
+				word = word.substring(2) + "quay";
+			}
+			else {
+				for(int j = 0; j < word.length(); j++) {
+					if(word.charAt(j) == 'a' || word.charAt(j) == 'e' || word.charAt(j) == 'i' || word.charAt(j) == 'o' || word.charAt(j) == 'u') {
+						String shiftingLetters = word.substring(0, j);
+						String mainLetters = word.substring(j);
+						word = mainLetters + shiftingLetters + "ay";
+						break;
+					}
+				}
+			}
+			
+			if(i < words.length - 1) {
+				pigLatin += word + " ";
+			}else {
+				pigLatin += word;
+			}
+			
+		}
+		
+		return pigLatin;
 	}
 
 	/**
@@ -360,7 +390,7 @@ public class EvaluationService {
 	 * @return
 	 */
 	public boolean isArmstrongNumber(int input) {
-		// TODO Write an implementation for this method declaration
+		
 		return false;
 	}
 
