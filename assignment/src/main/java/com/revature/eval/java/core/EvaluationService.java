@@ -202,22 +202,20 @@ public class EvaluationService {
 	public String cleanPhoneNumber(String string) {
 		String phoneNumber = string.replaceAll("\\D", "");
 		if(phoneNumber.length() > 11) {
-			throw new IllegalArgumentException("Please enter valid phone number");
+			throw new IllegalArgumentException("Phone number length is greater than 11");
 		}else if (phoneNumber.length() == 11) {
 			if(phoneNumber.charAt(0) == '1') {
 				//remove 1
 			}else {
-				throw new IllegalArgumentException("Please enter valid phone number");
+				throw new IllegalArgumentException("First number in 11 digit number wasn't recognized");
 			}
 		}else {
 			if(phoneNumber.length() == 10) {
-				if(phoneNumber.charAt(0) >= 2) {
-					
-				}else {
+				if(phoneNumber.charAt(0) < 2) {
 					throw new IllegalArgumentException("Please enter valid phone number");
 				}
 			}else {
-				throw new IllegalArgumentException("Please enter valid phone number");
+				throw new IllegalArgumentException("Expected 10 or 11 digits");
 			}
 		}
 		return phoneNumber;
@@ -415,12 +413,12 @@ public class EvaluationService {
 	 */
 	public List<Long> calculatePrimeFactorsOf(long l) {
 		List<Long> primeFactors = new ArrayList<Long>();
-		long target = l;
+		long number = l;
 		long current = 2;
-		while (current <= target) {
-			if (target % current == 0){
+		while (current <= number) {
+			if (number % current == 0){
 				primeFactors.add(current);
-				target = target / current;
+				number /= current;
 				current = 2;
 			}else {
 				current++;
@@ -506,10 +504,37 @@ public class EvaluationService {
 	 * @return
 	 */
 	public int calculateNthPrime(int i) {
-		// TODO Write an implementation for this method declaration
-		return 0;
+		Integer primeNumber = 0;
+		List <Integer> primeNumbers = new ArrayList<Integer>(i);
+		if(i < 1) {
+			throw new IllegalArgumentException();
+		}else if (i == 1) {
+			primeNumber = 2;
+		}else if (i > 1) {
+			
+			Integer number = 2;
+			while(primeNumbers.size() < i) {
+				if(isPrime(number)) {
+					primeNumbers.add(number);
+					number++;
+				}else {
+					number++;
+				}
+			}
+			primeNumber = primeNumbers.get(i - 1);
+		}
+		return primeNumber;
 	}
-
+	
+	public static boolean isPrime(int number) {
+	    for (int i = 2; i < number; i++) {
+	        if (number % i == 0) {
+	            return false;
+	        }
+	    }
+	    return true;
+	}
+	
 	/**
 	 * 13 & 14. Create an implementation of the atbash cipher, an ancient encryption
 	 * system created in the Middle East.
