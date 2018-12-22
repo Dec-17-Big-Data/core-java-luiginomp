@@ -327,73 +327,73 @@ public class EvaluationServiceTest {
 //		assertEquals("ickquay astfay unray", evaluationService.toPigLatin("quick fast run"));
 //	}
 //
-	/*******************************************************************
-	 * Question 9
-	 ******************************************************************/
-	@Test
-	public void singleDigitsAreArmstrongNumbers() {
-		int input = 5;
-
-		assertTrue(evaluationService.isArmstrongNumber(input));
-	}
-
-	@Test
-	public void noTwoDigitArmstrongNumbers() {
-		int input = 10;
-
-		assertFalse(evaluationService.isArmstrongNumber(input));
-	}
-
-	@Test
-	public void threeDigitNumberIsArmstrongNumber() {
-		int input = 153;
-
-		assertTrue(evaluationService.isArmstrongNumber(input));
-	}
-
-	@Test
-	public void threeDigitNumberIsNotArmstrongNumber() {
-		int input = 100;
-
-		assertFalse(evaluationService.isArmstrongNumber(input));
-	}
-
-	@Test
-	public void fourDigitNumberIsArmstrongNumber() {
-		int input = 9474;
-
-		assertTrue(evaluationService.isArmstrongNumber(input));
-	}
-
 //	/*******************************************************************
-//	 * Question 10
+//	 * Question 9
 //	 ******************************************************************/
-//
 //	@Test
-//	public void testPrimeNumber() {
-//		assertEquals(Collections.singletonList(2L), evaluationService.calculatePrimeFactorsOf(2L));
+//	public void singleDigitsAreArmstrongNumbers() {
+//		int input = 5;
+//
+//		assertTrue(evaluationService.isArmstrongNumber(input));
 //	}
 //
 //	@Test
-//	public void testSquareOfAPrime() {
-//		assertEquals(Arrays.asList(3L, 3L), evaluationService.calculatePrimeFactorsOf(9L));
+//	public void noTwoDigitArmstrongNumbers() {
+//		int input = 10;
+//
+//		assertFalse(evaluationService.isArmstrongNumber(input));
 //	}
 //
 //	@Test
-//	public void testCubeOfAPrime() {
-//		assertEquals(Arrays.asList(2L, 2L, 2L), evaluationService.calculatePrimeFactorsOf(8L));
+//	public void threeDigitNumberIsArmstrongNumber() {
+//		int input = 153;
+//
+//		assertTrue(evaluationService.isArmstrongNumber(input));
 //	}
 //
 //	@Test
-//	public void testProductOfPrimesAndNonPrimes() {
-//		assertEquals(Arrays.asList(2L, 2L, 3L), evaluationService.calculatePrimeFactorsOf(12L));
+//	public void threeDigitNumberIsNotArmstrongNumber() {
+//		int input = 100;
+//
+//		assertFalse(evaluationService.isArmstrongNumber(input));
 //	}
 //
 //	@Test
-//	public void testProductOfPrimes() {
-//		assertEquals(Arrays.asList(5L, 17L, 23L, 461L), evaluationService.calculatePrimeFactorsOf(901255L));
+//	public void fourDigitNumberIsArmstrongNumber() {
+//		int input = 9474;
+//
+//		assertTrue(evaluationService.isArmstrongNumber(input));
 //	}
 //
+	/*******************************************************************
+	 * Question 10
+	 ******************************************************************/
+
+	@Test
+	public void testPrimeNumber() {
+		assertEquals(Collections.singletonList(2L), evaluationService.calculatePrimeFactorsOf(2L));
+	}
+
+	@Test
+	public void testSquareOfAPrime() {
+		assertEquals(Arrays.asList(3L, 3L), evaluationService.calculatePrimeFactorsOf(9L));
+	}
+
+	@Test
+	public void testCubeOfAPrime() {
+		assertEquals(Arrays.asList(2L, 2L, 2L), evaluationService.calculatePrimeFactorsOf(8L));
+	}
+
+	@Test
+	public void testProductOfPrimesAndNonPrimes() {
+		assertEquals(Arrays.asList(2L, 2L, 3L), evaluationService.calculatePrimeFactorsOf(12L));
+	}
+
+	@Test
+	public void testProductOfPrimes() {
+		assertEquals(Arrays.asList(5L, 17L, 23L, 461L), evaluationService.calculatePrimeFactorsOf(901255L));
+	}
+
 //	/*******************************************************************
 //	 * Question 11
 //	 ******************************************************************/
