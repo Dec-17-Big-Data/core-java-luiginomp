@@ -568,8 +568,69 @@ public class EvaluationService {
 		 * @return
 		 */
 		public static String encode(String string) {
-			// TODO Write an implementation for this method declaration
-			return null;
+			String phrase = string.toLowerCase();
+			Map <Character, Character> cipherMap = new HashMap<Character, Character>();
+			cipherMap.put('a', 'z');
+			cipherMap.put('b', 'y');
+			cipherMap.put('c', 'x');
+			cipherMap.put('d', 'w');
+			cipherMap.put('e', 'v');
+			cipherMap.put('f', 'u');
+			cipherMap.put('g', 't');
+			cipherMap.put('h', 's');
+			cipherMap.put('i', 'r');
+			cipherMap.put('j', 'q');
+			cipherMap.put('k', 'p');
+			cipherMap.put('l', 'o');
+			cipherMap.put('m', 'n');
+			cipherMap.put('n', 'm');
+			cipherMap.put('o', 'l');
+			cipherMap.put('p', 'k');
+			cipherMap.put('q', 'j');
+			cipherMap.put('r', 'i');
+			cipherMap.put('s', 'h');
+			cipherMap.put('t', 'g');
+			cipherMap.put('u', 'f');
+			cipherMap.put('v', 'e');
+			cipherMap.put('w', 'd');
+			cipherMap.put('x', 'c');
+			cipherMap.put('y', 'b');
+			cipherMap.put('z', 'a');
+			String conversion = "";
+			String response = "";
+			for (int i = 0; i < phrase.length(); i++) {
+				Character currentCharacter = phrase.charAt(i);
+				if(Character.isLetter(currentCharacter)) {
+					Character cipherLetter = cipherMap.get(currentCharacter);
+					conversion += cipherLetter;
+				}else if(Character.isDigit(currentCharacter)) {
+					conversion += currentCharacter;
+				}
+			}
+			if(conversion.length() > 5) {
+				List <String> groups = new ArrayList<String>();
+				for (int i = 0; i < conversion.length(); i++) {
+					if(i == 5) {
+						String group = conversion.substring(0, 5);
+						groups.add(group);
+						conversion = conversion.replaceFirst(group, "");
+						i = 0;
+					}
+
+				}
+				for (int i = 0; i < groups.size(); i++) {
+					String currentGroup = groups.get(i);
+					if(i < groups.size() - 1) {
+						response += currentGroup + " ";
+					}else if (i == groups.size() - 1) {
+						response += currentGroup;
+					}
+				}
+				response += " " + conversion;
+			}else {
+				response = conversion;
+			}
+			return response;
 		}
 
 		/**

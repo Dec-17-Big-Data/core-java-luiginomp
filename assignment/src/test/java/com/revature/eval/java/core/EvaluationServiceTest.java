@@ -458,66 +458,66 @@ public class EvaluationServiceTest {
 //		evaluationService.calculateNthPrime(0);
 //	}
 //
-	/*******************************************************************
-	 * Question 13
-	 ******************************************************************/
-
-	@Test
-	public void testEncodeYes() {
-		assertEquals("bvh", EvaluationService.AtbashCipher.encode("yes"));
-	}
-
-	@Test
-	public void testEncodeOmgInCapital() {
-		assertEquals("lnt", EvaluationService.AtbashCipher.encode("OMG"));
-	}
-
-	@Test
-	public void testEncodeMindBlowingly() {
-		assertEquals("nrmwy oldrm tob", EvaluationService.AtbashCipher.encode("mindblowingly"));
-	}
-
-	@Test
-	public void testEncodeNumbers() {
-		assertEquals("gvhgr mt123 gvhgr mt", EvaluationService.AtbashCipher.encode("Testing,1 2 3, testing."));
-	}
-
-	@Test
-	public void testEncodeDeepThought() {
-		assertEquals("gifgs rhurx grlm", EvaluationService.AtbashCipher.encode("Truth is fiction."));
-	}
-
-	@Test
-	public void testEncodeAllTheLetters() {
-		assertEquals("gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt",
-				EvaluationService.AtbashCipher.encode("The quick brown fox jumps over the lazy dog."));
-	}
-
 //	/*******************************************************************
-//	 * Question 14
+//	 * Question 13
 //	 ******************************************************************/
+//
 //	@Test
-//	public void testDecodeExercism() {
-//		assertEquals("exercism", EvaluationService.AtbashCipher.decode("vcvix rhn"));
+//	public void testEncodeYes() {
+//		assertEquals("bvh", EvaluationService.AtbashCipher.encode("yes"));
 //	}
 //
 //	@Test
-//	public void testDecodeASentence() {
-//		assertEquals("anobstacleisoftenasteppingstone",
-//				EvaluationService.AtbashCipher.decode("zmlyh gzxov rhlug vmzhg vkkrm thglm v"));
+//	public void testEncodeOmgInCapital() {
+//		assertEquals("lnt", EvaluationService.AtbashCipher.encode("OMG"));
 //	}
 //
 //	@Test
-//	public void testDecodeNumbers() {
-//		assertEquals("testing123testing", EvaluationService.AtbashCipher.decode("gvhgr mt123 gvhgr mt"));
+//	public void testEncodeMindBlowingly() {
+//		assertEquals("nrmwy oldrm tob", EvaluationService.AtbashCipher.encode("mindblowingly"));
 //	}
 //
 //	@Test
-//	public void testDecodeAllTheLetters() {
-//		assertEquals("thequickbrownfoxjumpsoverthelazydog",
-//				EvaluationService.AtbashCipher.decode("gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt"));
+//	public void testEncodeNumbers() {
+//		assertEquals("gvhgr mt123 gvhgr mt", EvaluationService.AtbashCipher.encode("Testing,1 2 3, testing."));
 //	}
 //
+//	@Test
+//	public void testEncodeDeepThought() {
+//		assertEquals("gifgs rhurx grlm", EvaluationService.AtbashCipher.encode("Truth is fiction."));
+//	}
+//
+//	@Test
+//	public void testEncodeAllTheLetters() {
+//		assertEquals("gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt",
+//				EvaluationService.AtbashCipher.encode("The quick brown fox jumps over the lazy dog."));
+//	}
+//
+	/*******************************************************************
+	 * Question 14
+	 ******************************************************************/
+	@Test
+	public void testDecodeExercism() {
+		assertEquals("exercism", EvaluationService.AtbashCipher.decode("vcvix rhn"));
+	}
+
+	@Test
+	public void testDecodeASentence() {
+		assertEquals("anobstacleisoftenasteppingstone",
+				EvaluationService.AtbashCipher.decode("zmlyh gzxov rhlug vmzhg vkkrm thglm v"));
+	}
+
+	@Test
+	public void testDecodeNumbers() {
+		assertEquals("testing123testing", EvaluationService.AtbashCipher.decode("gvhgr mt123 gvhgr mt"));
+	}
+
+	@Test
+	public void testDecodeAllTheLetters() {
+		assertEquals("thequickbrownfoxjumpsoverthelazydog",
+				EvaluationService.AtbashCipher.decode("gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt"));
+	}
+
 //	/*******************************************************************
 //	 * Question 15
 //	 ******************************************************************/
