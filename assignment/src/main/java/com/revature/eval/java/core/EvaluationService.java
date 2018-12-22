@@ -390,8 +390,16 @@ public class EvaluationService {
 	 * @return
 	 */
 	public boolean isArmstrongNumber(int input) {
-		
-		return false;
+		//Count the length of digits in the integer
+		String numberString = String.valueOf(input);
+		Integer length = numberString.length();
+		Integer sum = 0;
+		for (int i = 0; i < numberString.length(); i++) {
+			Integer digit = Integer.parseInt(numberString.substring(i, i + 1));
+			Integer poweredDigit = (int) Math.pow(digit, length);
+			sum += poweredDigit;
+		}
+		return sum == input ? true : false;
 	}
 
 	/**
