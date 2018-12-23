@@ -855,8 +855,26 @@ public class EvaluationService {
 	 * @return
 	 */
 	public boolean isLuhnValid(String string) {
-		// TODO Write an implementation for this method declaration
-		return false;
+		string = string.replaceAll(" ", "");
+        Integer sum = 0;
+        boolean doubleCurrentDigit = false;
+        for(int i = string.length() - 1; i >= 0; i--) {
+        	Character currentCharacter = string.charAt(i);
+        	if(Character.isDigit(currentCharacter)) {
+        		Integer currentDigit = Character.getNumericValue(currentCharacter);
+        		if(doubleCurrentDigit) {
+        			currentDigit += currentDigit;
+        			if(currentDigit > 9) {
+        				currentDigit = (currentDigit % 10) + 1;
+        			}
+        		}
+    			sum += currentDigit;
+    			doubleCurrentDigit = !doubleCurrentDigit;
+        	}else {
+        		return false;
+        	}
+        }
+        return (sum % 10 == 0);
 	}
 
 	/**
