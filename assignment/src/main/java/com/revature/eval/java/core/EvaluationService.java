@@ -681,8 +681,43 @@ public class EvaluationService {
 	 * @return
 	 */
 	public boolean isValidIsbn(String string) {
-		// TODO Write an implementation for this method declaration
-		return false;
+		//Check for valid string length
+		string = string.replaceAll("-", "");
+		if (string.length() == 10) {
+			Integer sum = 0;
+			Integer digit = 0;
+			Integer multiplier = 10;
+			for (int i = 0; i < string.length() - 1; i++) {
+				Character currentCharacter = string.charAt(i);
+				if(!Character.isDigit(currentCharacter)) {
+					return false;
+				}else {
+					digit = Character.getNumericValue(currentCharacter);
+					sum += digit * multiplier;
+					multiplier--;
+				}
+			}
+			Character lastCharacter = string.charAt(9);
+			if(Character.isDigit(lastCharacter)) {
+				sum += Character.getNumericValue(lastCharacter);
+				if(sum % 11 == 0) {
+					return true;
+				}else {
+					return false;
+				}
+			}else if (lastCharacter == 'X') {
+				sum += 10;
+				if(sum % 11 == 0) {
+					return true;
+				}else {
+					return false;
+				}
+			}else {
+				return false;
+			}
+		}else {
+			return false;
+		}
 	}
 
 	/**
