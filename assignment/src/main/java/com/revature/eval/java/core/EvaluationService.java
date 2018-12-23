@@ -734,8 +734,28 @@ public class EvaluationService {
 	 * @return
 	 */
 	public boolean isPangram(String string) {
-		// TODO Write an implementation for this method declaration
-		return false;
+		if(string == "" || string == null || string.length() == 0) {
+			System.out.println("String is empty. Not a pangram.");
+			return false;
+		}else {
+			boolean[] lettersUsed = new boolean[26];
+			Integer alphabetIndex = 0;
+			for (int i = 0; i < string.length(); i++) {
+				Character currentCharacter = string.charAt(i);
+				if(currentCharacter >= 'A' && currentCharacter <= 'Z') {
+					alphabetIndex = currentCharacter - 'A';
+				}else if (currentCharacter >= 'a' && currentCharacter <= 'z') {
+					alphabetIndex = currentCharacter - 'a';
+				}
+				lettersUsed[alphabetIndex] = true;
+			}
+			for (int i = 0; i < lettersUsed.length - 1; i++) {
+				if(lettersUsed[i] == false) {
+					return false;
+				}
+			}
+		}
+		return true;
 	}
 
 	/**

@@ -518,62 +518,62 @@ public class EvaluationServiceTest {
 //				EvaluationService.AtbashCipher.decode("gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt"));
 //	}
 //
-	/*******************************************************************
-	 * Question 15
-	 ******************************************************************/
-	@Test
-	public void validIsbnNumber() {
-		assertTrue(evaluationService.isValidIsbn("3-598-21508-8"));
-	}
-
-	@Test
-	public void invalidIsbnCheckDigit() {
-		assertFalse(evaluationService.isValidIsbn("3-598-21508-9"));
-	}
-
-	@Test
-	public void validIsbnNumberWithCheckDigitOfTen() {
-		assertTrue(evaluationService.isValidIsbn("3-598-21507-X"));
-	}
-
-	@Test
-	public void checkDigitIsACharacterOtherThanX() {
-		assertFalse(evaluationService.isValidIsbn("3-598-21507-A"));
-	}
-
-	@Test
-	public void invalidCharacterInIsbn() {
-		assertFalse(evaluationService.isValidIsbn("3-598-2K507-0"));
-	}
-
 //	/*******************************************************************
-//	 * Question 16
+//	 * Question 15
 //	 ******************************************************************/
 //	@Test
-//	public void emptySentenceIsNotPangram() {
-//		assertFalse(evaluationService.isPangram(""));
+//	public void validIsbnNumber() {
+//		assertTrue(evaluationService.isValidIsbn("3-598-21508-8"));
 //	}
 //
 //	@Test
-//	public void recognizesPerfectLowerCasePangram() {
-//		assertTrue(evaluationService.isPangram("abcdefghijklmnopqrstuvwxyz"));
+//	public void invalidIsbnCheckDigit() {
+//		assertFalse(evaluationService.isValidIsbn("3-598-21508-9"));
 //	}
 //
 //	@Test
-//	public void pangramWithOnlyLowerCaseLettersIsRecognizedAsPangram() {
-//		assertTrue(evaluationService.isPangram("the quick brown fox jumps over the lazy dog"));
+//	public void validIsbnNumberWithCheckDigitOfTen() {
+//		assertTrue(evaluationService.isValidIsbn("3-598-21507-X"));
 //	}
 //
 //	@Test
-//	public void phraseMissingCharacterXIsNotPangram() {
-//		assertFalse(evaluationService.isPangram("a quick movement of the enemy will jeopardize five gunboats"));
+//	public void checkDigitIsACharacterOtherThanX() {
+//		assertFalse(evaluationService.isValidIsbn("3-598-21507-A"));
 //	}
 //
 //	@Test
-//	public void phraseMissingAnotherCharacterIsNotPangram() {
-//		assertFalse(evaluationService.isPangram("five boxing wizards jump quickly at it"));
+//	public void invalidCharacterInIsbn() {
+//		assertFalse(evaluationService.isValidIsbn("3-598-2K507-0"));
 //	}
 //
+	/*******************************************************************
+	 * Question 16
+	 ******************************************************************/
+	@Test
+	public void emptySentenceIsNotPangram() {
+		assertFalse(evaluationService.isPangram(""));
+	}
+
+	@Test
+	public void recognizesPerfectLowerCasePangram() {
+		assertTrue(evaluationService.isPangram("abcdefghijklmnopqrstuvwxyz"));
+	}
+
+	@Test
+	public void pangramWithOnlyLowerCaseLettersIsRecognizedAsPangram() {
+		assertTrue(evaluationService.isPangram("the quick brown fox jumps over the lazy dog"));
+	}
+
+	@Test
+	public void phraseMissingCharacterXIsNotPangram() {
+		assertFalse(evaluationService.isPangram("a quick movement of the enemy will jeopardize five gunboats"));
+	}
+
+	@Test
+	public void phraseMissingAnotherCharacterIsNotPangram() {
+		assertFalse(evaluationService.isPangram("five boxing wizards jump quickly at it"));
+	}
+
 //	/*******************************************************************
 //	 * Question 17
 //	 ******************************************************************/
