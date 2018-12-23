@@ -2,6 +2,7 @@ package com.revature.eval.java.core;
 
 import java.time.temporal.Temporal;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -785,8 +786,36 @@ public class EvaluationService {
 	 * @return
 	 */
 	public int getSumOfMultiples(int i, int[] set) {
-		// TODO Write an implementation for this method declaration
-		return 0;
+		List <Integer> combinedMultiples = new ArrayList <Integer>();
+		Integer sum = 0;
+		for (int j = 0; j < set.length; j++) {
+			Integer currentStart = set[j];
+			List <Integer> currentList = findMultiplesOf(currentStart, i);
+			for(int k = 0; k < currentList.size(); k++) {
+				Integer currentMultiple = currentList.get(k);
+				if(!combinedMultiples.contains(currentMultiple)) {
+					combinedMultiples.add(currentMultiple);
+				}
+			}
+			
+		}
+		for (int j = 0; j < combinedMultiples.size(); j++) {
+			Integer currentMultiple = combinedMultiples.get(j);
+			sum += currentMultiple;
+		}
+		return sum;
+	}
+	
+	public List <Integer> findMultiplesOf(Integer start, Integer end){
+		List <Integer> multiples = new ArrayList <Integer>();
+		Integer currentMultiple = start;
+		for (int i = 0; i < end; i++) {
+			if(i == currentMultiple) {
+				multiples.add(currentMultiple);
+				currentMultiple += start;
+			}
+		}
+		return multiples;
 	}
 
 	/**
