@@ -281,30 +281,27 @@ public class EvaluationService {
 	 * binary search is a dichotomic divide and conquer search algorithm.
 	 * 
 	 */
-	static class BinarySearch<T extends Comparable> {
+	static class BinarySearch<T extends Comparable<T>> {
 		private List<T> sortedList;
 
 		public int indexOf(T t) {
-			if(sortedList.size() == 0) {
-				return -1;
-			}
-			Integer index = -1;
+			Integer searchValue = Integer.parseInt(t.toString());
+			Integer answer = -1;
 			Integer lowestIndex = 0;
 			Integer highestIndex = sortedList.size() - 1;
-			while (lowestIndex <= highestIndex) {
-				Integer currentIndex = (lowestIndex + highestIndex) / 2;
-				if(t.compareTo(sortedList.get(currentIndex)) == 1) {
-					lowestIndex = currentIndex + 1;
-				}
-				else if (t.compareTo(sortedList.get(currentIndex)) == -1) {
+			while(lowestIndex <= highestIndex) {
+				Integer currentIndex = (lowestIndex + highestIndex)/ 2;
+				Integer currentValue = Integer.parseInt(sortedList.get(currentIndex).toString());
+				if(searchValue.compareTo(currentValue) == -1) {
 					highestIndex = currentIndex - 1;
-				}
-				else if (t.compareTo(sortedList.get(currentIndex)) == 0) {
-					index = currentIndex;
-					break;
+				}else if (searchValue.compareTo(currentValue) == 1) {
+					lowestIndex = currentIndex + 1;
+				}else if (searchValue.compareTo(currentValue) == 0) {
+					answer = currentIndex;
+					return answer;
 				}
 			}
-			return index;
+			return answer;
 		}
 
 		public BinarySearch(List<T> sortedList) {
@@ -736,7 +733,6 @@ public class EvaluationService {
 	 */
 	public boolean isPangram(String string) {
 		if(string == "" || string == null || string.length() == 0) {
-			System.out.println("String is empty. Not a pangram.");
 			return false;
 		}else {
 			boolean[] lettersUsed = new boolean[26];
